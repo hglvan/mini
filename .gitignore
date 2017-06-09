@@ -1,0 +1,7 @@
+#过滤文件夹
+/webapp/node_modules/*
+/erp/node_modules
+
+#过滤文件
+*.zip
+*.rar
