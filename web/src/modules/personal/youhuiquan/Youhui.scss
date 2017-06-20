@@ -1,0 +1,43 @@
+@import '../../../static/font/iconfont.css';
+
+#reactroot{
+    height:100%;
+}
+.youhui{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    header{
+        position: relative;
+        height:50px;
+       >span{
+           position: absolute;
+           left:5%;
+           top:20%;
+           font-size:24px;
+       }
+    }
+    >ul{
+        height:50px;
+        display: flex;
+        color:#000;
+        font-size:14px;
+        text-align: center;
+        li{
+            &:first-child{
+                border-bottom: 1px solid #bf2943;
+                color:#bf2943;
+            }
+            
+            line-height: 50px;
+            flex:1;
+           
+            // border-bottom: 1px solid #bf2943;
+        }
+    }
+    .you_content{
+        height:100%;
+        background-color:rgba(0,0,0,0.1); 
+       
+    }
+}

@@ -1,0 +1,207 @@
+@import "base.scss";
+@import '../../static/font/iconfont.css';
+@import '../../static/my-font/iconfont.css';
+$bgc:#F0F2F5;
+#top,#reactroot{
+    height:100%;
+}
+.personal_center{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $bgc;
+    justify-content: space-between;
+    
+}
+.personal_container{
+    flex: 1;
+    overflow-y: auto;
+}
+header{
+    height: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    p{
+        font-size: 16px;
+        color:#424242;
+        line-height: 17PX;
+        vertical-align: middle;
+        line-height: 50px;
+        
+    }
+}
+#banner{
+    width:100%;
+    background: url('../../static/imgs/head-bg.png');
+    height:180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    >div{
+        height:85px;
+        width: 85px;
+        background: url('../../static/imgs/UserCenter-ico.png') no-repeat -5px -20px;
+        background-size: 96px;
+    }
+    p{
+         color:white;
+    }
+    p:nth-child(2){
+        font-size:14px;
+    }
+    p:last-child span{
+        position:absolute;
+        background-color: #cf4b62;
+        right:15px;
+        top:15px;
+        display: inline-block;
+        width:50px;
+        height:24px;
+        text-align:center;
+        border-radius: 7px;
+        font-size:14px;
+        line-height: 24px;
+    }
+}
+#navbar{
+    width:100%;
+    
+    
+    ul{
+        padding-top: 10px;
+        padding-bottom: 1%;
+        width:100%;
+        display: flex;
+        font-size: 12px;
+        background-color: white;
+        li{
+            flex:1;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid #ccc;
+            >span{
+                margin-left: 4px;
+            }
+            >div{
+                display:flex;
+                justify-content: center;
+                padding:8px 0;
+            }
+            >p{
+                font-size:14px;
+                strong{
+                    color:#ce3737;
+                    padding:0 4px;
+                }
+            }
+        }
+        li:first-child{
+            i{
+                display: inline-block;
+                width:18px;
+                height:18px;
+                background: url('../../static/imgs/UserCenter-ico.png') no-repeat -5px -295px;
+                background-size: 85px;
+            }
+        }
+        li:nth-child(2){
+            i{
+                display: inline-block;
+                width:18px;
+                height:18px;
+                background: url('../../static/imgs/UserCenter-ico.png') no-repeat -6px -360px;
+                background-size: 85px;
+            }
+        }
+         li:nth-child(3){
+            i{
+                display: inline-block;
+                width:18px;
+                height:18px;
+                background: url('../../static/imgs/UserCenter-ico.png') no-repeat -7px -438px;
+                background-size: 85px;
+            }
+        }
+        li:nth-child(4){
+            border-right: none;
+            i{
+                display: inline-block;
+                width:18px;
+                height:18px;
+                background: url('../../static/imgs/cenicon2_03.png') no-repeat left center;
+                background-size: 18px;
+            }
+        }
+    }
+}
+main{
+    margin-top:16px;
+    width:100%;
+    ul{
+        background:white;
+        width:100%;
+        
+        li{
+            width:100%;
+            border-bottom: 1px solid #f1f2f6;
+           
+            font-size: 14px;
+            padding: 4% 0;
+            display: flex;
+            justify-content: space-between;
+            strong{
+                width:10%;
+                text-align: center;
+                color:orangered;
+            }
+            >i{
+                width:10%;
+            }
+            p{
+                width:80%;
+               
+            }
+        }
+        a:nth-child(2){
+             span{
+                color:#999;
+                font-size:12px;
+                font-style: normal;
+            }
+        }
+        
+        li:nth-child(3){
+            justify-content: flex-start;
+            color:#0dc441;
+            p{
+               width:60px;
+            }
+            div{
+                width:60%;
+                color:#3388ff;
+                i{
+                    color:#999;
+                    font-style: normal;
+                    font-size:12px;
+                }
+            }
+        }
+    }
+}
+.personal_center footer{
+    ul{
+        li{
+            i{
+                font-size:20px;
+            }
+        }
+    }
+}

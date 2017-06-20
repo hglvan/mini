@@ -1,0 +1,175 @@
+
+body,html{
+	height:100%;
+	line-height: 1.6;
+	font-family: '思源黑体','Microsoft YaHei';
+	font-size:16px;
+	/*background:#f3f3f3;*/
+	background:#fff;
+}
+.all{
+	
+	display:flex;
+	flex-direction:column;
+	max-width:20.0rem;
+	margin:0 auto;
+}
+
+
+
+.login_header{
+	display:flex;
+	justify-content: space-between;
+	line-height:1.5rem;
+	border-bottom:0.03125rem solid #cbcbcb;
+	height:1.5rem;
+	span{
+		width:2.5rem;
+	
+	}
+	.login_vip{
+		width:50%;
+		font-size:0.53125rem;
+		text-align:center;
+	}
+	
+	.login_l{
+		background:url('../imgs/login/head-icon.png') -0.78125rem -0.3125rem;
+		background-size: 3.03125rem;
+	}
+
+}
+  
+.login_content{
+
+	width:100%;
+	.oul{
+		margin:0 0.46875rem;
+		li{
+			// width:9.0625rem;
+			height:1.5625rem;
+			/*border: 1px solid #000;*/
+			line-height:1.5625rem;
+			border-bottom:0.03125rem solid #cbcbcb;
+			position:relative;
+			input{
+				border:none;
+				font-size:14px;
+				padding-left:1.09375rem;
+				/*height:39px;*/
+				/*border: 1px solid #000;*/
+			}
+			span{
+				display:inline-block;
+				height:1.5625rem;
+				width:0.9375rem;
+				background:url('../imgs/login/icon-bg.png') -2.25rem -0.25rem;
+				background-size: 1.875rem;
+				position:absolute;
+				top:-0.09375rem;
+			}
+			.gb{
+				position:absolute;
+				right:0.3125rem;
+				color:#ccc;
+				display:none;
+			}
+			.ps{
+				background:url('../imgs/login/icon-bg.png') -2.25rem -2.625rem;
+				background-size: 1.875rem;
+			}
+
+			.save{
+				background:url('../imgs/login/icon-bg.png') -2.25rem -7.6875rem;/*287px*/
+				background-size: 1.875rem;
+			}
+			.havesave{
+				background:url('../imgs/login/icon-bg.png') -2.25rem -8.96875rem;/*287px*/
+				background-size: 1.875rem;
+			}
+			i{
+				padding-left:0.9375rem;
+				font-style:normal;
+				font-size:13px;
+			}
+			a{
+				font-size:13px;
+			}
+			.go_register{
+				color:#cf586e;
+				float:left;
+			}
+			.sea_psw{
+				color:black;
+				float:right;
+			}
+
+		}
+		.gl{border:none;}
+		.login_btn{
+		
+			background:#CF596C;
+			text-align:center;
+			border-radius:0.21875rem;
+			border:none;
+			color:#fff;
+		}
+
+
+	}
+
+}
+
+
+.login_footer{
+
+	text-align:center;
+	width:100%;
+	margin-top:2.3rem;
+	// margin-left:0;
+	
+	.qq{
+		
+		display:inline-block;
+		padding-right:0.78125rem;
+		// border: 1px solid #000;
+		border-right:0.03125rem solid #cbcbcb; 
+
+	}
+	.wb{
+		
+		display:inline-block;
+		padding-left:0.78125rem;
+		
+	}
+
+	.icon-qq{
+		font-size:0.78125rem;
+		color:#2FACE8;
+		
+	}
+	.icon-weibo{
+		color:#F26167;
+		font-size:0.78125rem;
+	}
+	span{
+		color:#999;
+	}
+
+}
+
+#pwdBox{
+	display:none;
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:100px;
+	background:#fff;
+	border:1px solid #ccc;
+	line-height:30px;
+
+	.btnp{
+		margin-left:5px;
+	}
+}

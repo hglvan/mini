@@ -1,0 +1,44 @@
+@import "../../base.scss";
+@import '../../../../static/font/iconfont.css';
+@import '../../../../static/my-font/iconfont.css';
+
+.nicheng{
+    header{
+        display: flex;
+        span{
+            width:15%;
+            font-size: 22px;
+        }
+        p{
+            width:70%;
+            font-size: 15px;
+        }
+        div{
+            width:15%;
+            text-align: left;
+            font-size: 14px;
+        }
+    }
+    .change_ni{
+        height:45px;
+        line-height: 45px;
+        font-size:12px;
+        border-top:1px solid rgba(0,0,0,0.1);
+        border-bottom:1px solid rgba(0,0,0,0.1);
+        input{
+            height:20px;
+            width:80%;
+            border:none;
+        }
+        span{
+            width:20%;
+            padding-left: 5%;
+        
+        }
+    }
+    >p{
+        font-size:12px;
+        color:#AEAEAE;
+        padding-top: 2% 0 0 1%;
+    }
+}

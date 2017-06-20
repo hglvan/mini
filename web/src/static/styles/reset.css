@@ -1,0 +1,198 @@
+/*重置样式表*/
+/*==========样式重置===========*/
+html {
+    font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+body{
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+
+// *{outline: none;}
+
+body,h1,h2,h3,h4,h5,h6,p,a,i,span,input,img,ul,li,ol,dl,dt,dd,form,input,textarea,th,td,select,figure,figcaption{
+	padding: 0;
+	margin: 0;
+}
+
+ul,ol,li{
+	list-style: none;
+}
+img{
+	display: block;
+	border:none;
+}
+table{border-collapse: collapse;}
+textarea{resize: none;overflow: hidden;}
+input{
+	outline: none;
+}
+top,banner,main,nav,foot,links{
+	display: block;
+}
+
+a{
+	text-decoration: none;
+	font-size: 10px;
+}
+*{
+	box-sizing:border-box;
+}
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+}
+
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	display: block;
+	content: "";
+	visibility: hidden;
+	clear: both;
+	height: 0;	
+}
+
+/*说明提示框*/
+.sm_box{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	left: 20%;
+	top: -25px;
+	min-width:60px;
+	height: 25px;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 3px;
+	border:1px solid #ea7514;
+	border-radius: 5px;
+	background-color: #ffc;
+}
+.sm_box::before,.sm_box::after{
+	content:'';
+	position:absolute;bottom:-10px;left:10px;
+	border:5px solid #fff;
+	border-color:red transparent transparent;
+}
+.sm_box::after{
+	bottom:-9px;
+	border-top-color:#ffc;
+}
+
+
+
+
+@font-face {font-family: "iconfont";
+  src: url('../icon-font/iconfont.eot?t=1497670964083'); /* IE9*/
+  src: url('../icon-font/iconfont.eot?t=1497670964083#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../icon-font/iconfont.woff?t=1497670964083') format('woff'), /* chrome, firefox */
+  url('../icon-font/iconfont.ttf?t=1497670964083') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../icon-font/iconfont.svg?t=1497670964083#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhanghu:before { content: "\3434"; }
+
+.icon-shezhi:before { content: "\f0003"; }
+
+.icon-dianhua:before { content: "\e604"; }
+
+.icon-shoucang:before { content: "\f00d6"; }
+
+.icon-fanhui:before { content: "\e605"; }
+
+.icon-gou:before { content: "\e603"; }
+
+.icon-weibo:before { content: "\e606"; }
+
+.icon-tubiao3:before { content: "\e6e3"; }
+
+.icon-wode:before { content: "\3575"; }
+
+.icon-iconfontlock:before { content: "\e632"; }
+
+.icon-qq:before { content: "\e616"; }
+
+.icon-fanhui1:before { content: "\e64e"; }
+
+.icon-rou:before { content: "\e6a6"; }
+
+.icon-dingdan:before { content: "\e622"; }
+
+.icon-mima:before { content: "\e61d"; }
+
+.icon-fenlei:before { content: "\e66f"; }
+
+.icon-shuiguo:before { content: "\e623"; }
+
+.icon-youhuiquan:before { content: "\e625"; }
+
+.icon-dizhi:before { content: "\eb87"; }
+
+.icon-icon052:before { content: "\e63e"; }
+
+.icon-cuo:before { content: "\e684"; }
+
+.icon-shutiao:before { content: "\e67f"; }
+
+.icon-FastFood:before { content: "\e621"; }
+
+.icon-peisong:before { content: "\e670"; }
+
+.icon-kefu:before { content: "\e6cd"; }
+
+.icon-zhuye:before { content: "\e634"; }
+
+.icon-shangsanjiao:before { content: "\e678"; }
+
+.icon-shouyeshouye:before { content: "\e600"; }
+
+.icon-sj-down-copy:before { content: "\e60e"; }
+
+.icon-dou-copy:before { content: "\e60b"; }
+
+.icon-gouwudaishi:before { content: "\e607"; }
+
+.icon-zhanghuyue:before { content: "\e6a7"; }
+
+.icon-tanhao:before { content: "\e66a"; }
+
+.icon-dangao:before { content: "\e608"; }
+
+.icon-gouwudai:before { content: "\e626"; }
+
+.icon-dingbu:before { content: "\e682"; }
+
+.icon-tangdou:before { content: "\e5cf"; }
+
+.icon-sousuo-sousuo:before { content: "\e609"; }
+
+.icon-yinliao:before { content: "\e507"; }
+
+.icon-gouwudai1:before { content: "\e627"; }
+
+.icon-niunai:before { content: "\e61b"; }
+
+.icon-gou1:before { content: "\e502"; }
+

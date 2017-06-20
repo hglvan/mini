@@ -1,0 +1,211 @@
+import React,{Component} from 'react';
+import {connect} from 'react-redux';
+import * as CartAction from './CartAction';
+import  SpinnerComponent from '../spinner/SpinnerComponent';
+
+import '../../font/iconfont.css';
+import './Cart.scss';
+
+
+const IMAGE_DATA = [
+    {
+        src: './src/static/imgs/huo_long/6520699366.jpg',
+        alt: 'images-1',
+    },
+    {
+        src: './src/static/imgs/huo_long/6520699366.jpg',
+        alt: 'images-1',
+    }
+];
+const IMAGE_DATA2 = [
+    {
+        src: './src/static/imgs/huo_long/276.jpg',
+        alt: 'images-1',
+    },
+    {
+        src: './src/static/imgs/huo_long/a_01(2).jpg',
+        alt: 'images-1',
+    },
+    {
+        src: './src/static/imgs/huo_long/a_02(2).jpg',
+        alt: 'images-1',
+    },
+    {
+        src: './src/static/imgs/huo_long/a_03(2).jpg',
+        alt: 'images-1',
+    },
+    {
+        src: './src/static/imgs/huo_long/a_04(2).jpg',
+        alt: 'images-1',
+    },
+    {
+        src: './src/static/imgs/huo_long/a_05(1).jpg',
+        alt: 'images-1',
+    },
+    {
+        src: './src/static/imgs/huo_long/268.jpg',
+        alt: 'images-1',
+    }
+];
+
+class CartComponent extends Component{
+    constructor(props){
+        super(props);
+    }
+     change(){
+        console.log(this)
+        
+        this.props.router.push('index')
+       
+    }
+
+    render(){
+        function runBack() {
+            
+            window.history.back();
+        }
+        function cutNum(event) {
+            var res = event.target.nextElementSibling;
+            var num = parseInt(res.innerText);
+            res.innerText = --num;
+            if(num <= 1){
+                res.innerText = 1;
+            }
+            let ind = res.getAttribute('index') ? res.getAttribute('index') : parseInt(Math.random() * 100);
+            res.setAttribute('index',ind);
+            this.setState({[ind] : num});
+            console.log(this.state);
+        }
+        function addNum(event) {
+            var pre = event.target.previousElementSibling;
+            var num = parseInt(pre.innerText);
+            pre.innerText = ++num;
+            
+            let ind = pre.getAttribute('index') ? pre.getAttribute('index') : parseInt(Math.random() * 100);
+            pre.setAttribute('index',ind);
+            this.setState({[ind] : num});
+            console.log(this.state);
+        }
+        
+        return (
+            <div className="box">
+                <div className="box-top">
+                    <div className="box-ti-top">
+                        <span className="iconfont icon-fanhui" onClick={runBack}></span>
+                        <div className="title">购物袋</div>
+                        <span className="iconfont icon-zhuye" onClick={this.change.bind(this)}></span>
+                    </div>
+                </div>
+                    <div className="cart-main">
+                        <div className="cart-address">
+                            <div className="address-left">
+                                <div className="menmsg clearfix">
+                                    <div className="username">zzz</div>
+                                    <div className="elephone">12333222222</div>
+                                </div>
+                                <div className="left-address clearfix">
+                                    <span className="iconfont icon-dizhi"></span>
+                                    <p className="left-li-add">
+                                        北京市东城区法华寺136号提案11升水
+                                    </p>
+                                    <span className="left-li-add aa2">
+                                        当前选中地址不能使用特权令牌
+                                    </span>
+                                    
+                                </div>
+                                <span className="main-msg"> > </span>
+                            </div>
+                        </div>
+                        <div className="main-main">
+                            <ul>
+                                <li className="goods-li">
+                                    <div className="func">
+                                        <span className="close-btn">删除</span>
+                                    </div>
+                                    <div className="goods-main">
+                                        <span className="goodscheck"></span>
+                                        <div className="goodsimg"><img src="/src/static/imgs/2594841764.jpg" alt=""/></div>
+                                        <div className="goodsright">
+                                            <div className="goodstil">小胖子金枪鱼辣味罐头</div>
+                                            <div className="style-num">
+                                                <i className="num-cut" onClick={cutNum.bind(this)} > - </i>
+                                                <span className="goodsnum" ref="num1"> 1 </span>
+                                                <span className="num-add" onClick={addNum.bind(this)}>+</span>
+                                            </div>
+                                            <div className="goodsprice">12.9</div>
+                                        </div>
+                                       
+                                    </div>
+                                </li>
+                                <li className="goods-li">
+                                    <div className="func">
+                                        <span className="close-btn">删除</span>
+                                    </div>
+                                    <div className="goods-main">
+                                        <span className="goodscheck"></span>
+                                        <div className="goodsimg"><img src="/src/static/imgs/7907984517.jpg" alt=""/></div>
+                                        <div className="goodsright">
+                                            <div className="goodstil">天阁香辣脖子</div>
+                                            <div className="style-num">
+                                                <i className="num-cut" onClick={cutNum.bind(this)}> - </i>
+                                                <span className="goodsnum" ref="num2"> 1 </span>
+                                                <span className="num-add" onClick={addNum.bind(this)}>+</span>
+                                            </div>
+                
+                                            <div className="goodsprice">2.5</div>
+                                        </div>
+        
+                                    </div>
+                                </li>
+                                <li className="goods-li">
+                                    <div className="func">
+                                        <span className="close-btn">删除</span>
+                                    </div>
+                                    <div className="goods-main">
+                                        <span className="goodscheck"></span>
+                                        <div className="goodsimg"><img src="/src/static/imgs/2594841764.jpg" alt=""/></div>
+                                        <div className="goodsright">
+                                            <div className="goodstil">韩国进口农心牛肉味碗面</div>
+                                            <div className="style-num">
+                                                <i className="num-cut" onClick={cutNum.bind(this)}> - </i>
+                                                <span className="goodsnum" ref="num3"> 1 </span>
+                                                <span className="num-add" onClick={addNum.bind(this)}>+</span>
+                                            </div>
+                
+                                            <div className="goodsprice">6.5</div>
+                                        </div>
+        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="main-empty">
+                            <div className="empty-img"><img src="./src/static/imgs/empty.png" alt=""/></div>
+                            <div className="emtpytil">购物袋空空如也</div>
+                        </div>
+                    </div>
+                    <div className="box-ti-footer">
+                        <div className="footer-main">
+                            <div className="footer-check">
+                                <span className="checkall"/>全选
+                            </div>
+                            <div className="footer-price">
+                                <div className="true-price">14.0</div>
+                                <div className="hasprice">0.0</div>
+                            </div>
+                            <div className="accounts-btn">
+                                <button className="acc-btn">去结算</button>
+                            </div>
+                        </div>
+                    </div>
+                <SpinnerComponent/>
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = state => ({
+
+})
+
+export default connect(mapStateToProps, CartAction)(CartComponent);

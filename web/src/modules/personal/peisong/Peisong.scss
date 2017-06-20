@@ -1,0 +1,76 @@
+@import "../base.scss";
+@import '../../../static/font/iconfont.css';
+@import '../../../static/my-font/iconfont.css';
+
+.peisong{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    header{
+        position:relative;
+       line-height: 50px;
+       
+        span{
+            position:absolute;
+            left:5%;
+            
+            font-size:24px;
+        }
+        p{
+            line-height: 50px;
+            font-size: 15px;
+        }
+    }
+    .p_content{
+        flex:1;
+        overflow-y: auto;
+        ul{
+            li{
+                font-size: 14px;
+                padding: 3% 4% 3% 4%;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #f0f0f0;
+                color:#000;
+                position: relative;
+                span{
+                    display: inline-block;
+                    background: url("../../../static/imgs/icon_new.png") no-repeat 0 -79px;
+                    background-size: 25px;
+                    padding-left: 10%;
+                }
+                i{
+                    display: inline-block;
+                    width:25px;
+                    height:25px;
+                    
+                    background: url("../../../static/imgs/icon_new.png") no-repeat 0 -204px;
+                    background-size: 25px;
+                }
+               
+
+            }
+            li.yunfei{
+                span{
+                    background: url("../../../static/imgs/icon_new.png") no-repeat 0 -127px;
+                    background-size: 25px;
+                }
+            }
+            li.shijian{
+                 span{
+                    background: url("../../../static/imgs/icon_new.png") no-repeat 0 -179px;
+                    background-size: 25px;
+                }
+            }
+            div{
+                width:100%;
+                border-bottom: 1px solid #f0f0f0;
+                
+            }
+            div.fan_map{
+                // display: none;
+            }
+        }
+    }
+}

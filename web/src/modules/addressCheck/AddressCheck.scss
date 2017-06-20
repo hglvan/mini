@@ -1,0 +1,139 @@
+
+/*----------index*/
+body,html{
+	height: 100%;
+}
+
+#app,#reactroot{
+	height: 100%;
+}
+
+.container-ts{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 45px;
+}
+/*----------content*/
+.container-ts .content-ts{
+
+	flex:1;
+	display:flex;
+	flex-wrap: wrap;
+	background: #ffe;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.container-ts .content-ts dl{
+	width:100%;
+}
+.container-ts .content-ts dl::before{
+	content:'我的收货地址';
+	display:block;
+	width:100%;
+	height:32px;
+	line-height:32px;
+	padding:0px 5%;
+	font-size:14px;
+	border-bottom:1px solid #eee;
+}
+.container-ts .content-ts dl dd{
+	display:flex;
+	width:100%;
+	padding:10px 2%;
+	border-bottom:1px dotted #ccc;
+	height:90px;
+}
+.container-ts .content-ts dl dd.backActive{
+	background-color:#fee;
+}
+
+.container-ts .content-ts dl dd:last-child{
+	margin-bottom:64px;
+}
+
+.container-ts .content-ts dl dd ul{
+	display:flex;
+	width:100%;
+}
+
+.container-ts .content-ts dl dd ul li:nth-child(2){
+	width:75%;
+}
+.container-ts .content-ts dl dd ul li:nth-child(2) p{
+	height:32px;
+	line-height:32px;
+	display:flex;
+}
+.container-ts .content-ts dl dd ul li:nth-child(2) .addressItem span{
+	flex:1;
+	color:#999;
+	overflow: hidden;
+	white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.container-ts .content-ts dl dd ul li:nth-child(2) p span,
+.container-ts .content-ts dl dd ul li:nth-child(2) p label{
+	flex:1;
+	color:#666;
+}
+.container-ts .content-ts dl dd ul li:nth-child(2) p label{
+	flex:2;
+}
+
+
+.container-ts .content-ts dl dd ul li:nth-child(1),
+.container-ts .content-ts dl dd ul li:nth-child(3)
+{
+	width:12%;
+	text-align:center;
+}
+.container-ts .content-ts dl dd ul li .icon-dizhi{
+	font-size:20px;
+	color:#DB5A70;
+}
+.container-ts .content-ts dl dd ul li .icon-gou1{
+	font-size:24px;
+	color:#999;
+}
+
+.container-ts .content-ts dl dd ul li .icon-gou1.active{
+	/*color:#0a0;*/
+	color:#DB5A70;
+}
+
+
+
+
+
+
+
+
+/*-----------.foot-ts*/
+.container-ts>.foot-ts{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:44px;
+	background: #eee;
+	z-index: 1;
+	display:flex;
+}
+.container-ts>.foot-ts>a{
+	display:inline-block;
+	flex:1;
+	text-align:center;
+	margin-top:5px;
+	font-size:14px;
+	color:#666;
+}
+.container-ts>.foot-ts>a:nth-child(1){
+	margin-left:-28px;
+}
+.container-ts>.foot-ts>a>.iconfont{
+	padding:0 10px;
+	font-size:20px;
+	color:#DB5A70;
+}

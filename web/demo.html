@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="username" placeholder="请输入用户名" ><br>
+        <input type="text" id="password" placeholder="  请输入密码"><br>
+        <input type="text" id="nickname" placeholder="请输入昵称"><br>
+        <input type="text" id="email" placeholder="请输入email"><br>
+
+        <button id="loginbtn">登录</button>
+        <button id="registrbtn" >注册</button>
+        <button id="update">更新</button>
+        <br><br>
+        <input type="text" id="imgurl" placeholder="请输入图片" ><br>
+        <input type="text" id="title" placeholder="  请输入名称"><br>
+        <input type="text" id="price" placeholder="请输入价格"><br>
+        <input type="text" id="num" placeholder="请输入数量"><br>
+        <input type="text" id="goodsid" placeholder="请输入商品编号"><br>
+        <button id="cartbtn">购物车</button>
+        <br><br>
+        <input type="text" id="realName" placeholder="请输入姓名" ><br>
+        <input type="text" id="elephone" placeholder="  请输入电话"><br>
+        <input type="text" id="address" placeholder="请输入地址"><br>
+        <button id="addressbtn">地址</button>
+        <br><br>
+        <button id="getMsgBtn">获取数据</button>
+        <br><br>
+        <button id="getProduct">获取商品数据</button>
+    </div>
+    <script src="jquery/jquery-2.1.1.min.js"></script>
+    <script>
+        $('#loginbtn').click(function () {
+            $.post('http://localhost:888/login',{
+                username : $('#username').val(),
+                password : $('#password').val()
+            },function (response) {
+                if(!response.status){
+                    alert('error' + response.message)
+                }else{
+                    var arr = response.data[0].accountid;
+                    window.localStorage.setItem('accountid',arr);
+                    console.log(window.localStorage.getItem('accountid'));
+                }
+            })
+        })
+
+        $('#registrbtn').click(function () {
+            $.post('http://localhost:888/register',{
+                username : $('#username').val(),
+                password : $('#password').val()
+            },function (response) {
+                console.log(response)
+            })
+        })
+
+        $('#update').click(function () {
+            $.post('http://localhost:888/accountmsg',{
+                accountid : window.localStorage.getItem('accountid'),
+                username : $('#username').val(),
+                password : $('#password').val(),
+                nickname : $('#nickname').val(),
+                email : $('#email').val()
+            },function (response) {
+                console.log(response)
+            })
+        })
+
+        $('#cartbtn').click(function () {
+            $.post('http://localhost:888/cartmsg',{
+                accountid : window.localStorage.getItem('accountid'),
+                imgurl : $('#imgurl').val(),
+                title : $('#title').val(),
+                price : $('#price').val(),
+                num : $('#num').val(),
+                goodsid : $('#goodsid').val()
+            },function (response) {
+                console.log(response)
+            })
+        })
+
+
+        $('#addressbtn').click(function () {
+            $.post('http://localhost:888/addressMsg',{
+                accountid : window.localStorage.getItem('accountid'),
+                addressid: '1497535756459',
+                realName : $('#realName').val(),
+                elephone : $('#elephone').val(),
+                address : $('#address').val()
+            },function (response) {
+                console.log(response)
+            })
+        })
+
+        $('#getMsgBtn').click(function () {
+            $.post('http://localhost:888/getMsg',{
+                accountid : window.localStorage.getItem('accountid'),
+                option : 'address'
+            },function (response) {
+                window.localStorage.setItem('addressid',response.data[0].addressid)
+                console.log(window.localStorage.getItem('addressid'))
+            })
+        })
+
+        $('#getProduct').click(function () {
+            $.post('http://localhost:888/getProducts',{},function (response) {
+
+                console.log(response)
+            })
+        })
+    </script>
+</body>
+</html>

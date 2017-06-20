@@ -1,0 +1,60 @@
+/*----------index*/
+body,html{
+	height: 100%;
+}
+
+#app,#reactroot{
+	height: 100%;
+}
+
+.container-ts{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/*----------index*/
+body,html{
+	height: 100%;
+}
+
+#app,#reactroot{
+	height: 100%;
+}
+
+.container-ts{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/*----------header*/
+.container-ts>header{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height: 44px;
+	background: #DB5A70;
+	z-index: 1;
+}
+.container-ts>header>ul>li{
+	display: flex;
+	float: left;
+	justify-content: space-between;
+	height: 100%;
+	line-height: 44px;
+}
+.container-ts>header>ul>li .listTitle{
+	width:44px;	
+	text-align:center;
+	color:#fff;
+}
+.container-ts>header>ul>li .listCenter{
+	width:230px;
+	font-size:16px;
+	text-align:center;
+	font-family: '微软雅黑';
+	font-weight:normal;
+	color: #fff;
+}

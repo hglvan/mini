@@ -1,0 +1,163 @@
+
+body,html{
+	height:100%;
+	line-height: 1.6;
+	font-family: '思源黑体','Microsoft YaHei';
+	font-size:16px;
+	/*background:#f3f3f3;*/
+	background:#fff;
+}
+.all{
+	
+	display:flex;
+	flex-direction:column;
+	max-width:20.0rem;
+	margin:0 auto;
+}
+
+
+
+.login_header{
+	display:flex;
+	justify-content: space-between;
+	line-height:1.5rem;
+	border-bottom:0.03125rem solid #cbcbcb;
+	height:1.5rem;
+	span{
+		width:2.5rem;
+		height:1.5rem;
+		/*border: 1px solid #000;*/
+	}
+	.login_vip{
+		width:50%;
+		font-size:0.53125rem;
+		text-align:center;
+	}
+	
+	.login_l{
+		background:url('../imgs/login/head-icon.png') -0.78125rem -0.3125rem;
+		background-size: 3.03125rem;
+	}
+
+}
+  
+.register_content{
+
+	width:100%;
+	.oul{
+		margin:0 0.46875rem;
+		li{
+			// width:9.0625rem;
+			height:1.5625rem;
+			/*border: 1px solid #000;*/
+			line-height:1.5625rem;
+			border-bottom:0.03125rem solid #cbcbcb;
+			position:relative;
+			input{
+				border:none;
+				font-size:14px;
+				padding-left:3.3rem;
+				width:7.8125rem;
+			}
+			span{
+				display:inline-block;
+				height:1.375rem;
+				width:2.8125rem;
+				font-size:15px;
+				padding-left:0.3125rem;
+				position:absolute;
+				// top:-0.09375rem;
+			}
+			.yzm{
+				width:6.25rem;
+			}
+			.gb{
+				position:absolute;
+				right:0.3125rem;
+				color:#ccc;
+				display:none;
+			}
+			.code{
+				
+				font-size:18px;
+			}
+			.jym{
+				display:inline-block;
+				width:2.5rem;
+				height:100%;
+				background:#f2d7db;
+				position: absolute;
+				right:0;
+				padding:0;
+				color:#cf586c;
+				text-align: center;
+
+			}
+			.save{
+				background:url('../imgs/login/icon-bg.png') -2.25rem -7.6875rem;/*287px*/
+				background-size: 1.875rem;
+			}
+			i{
+				padding-left:0.9375rem;
+				font-style:normal;
+				font-size:13px;
+			}
+			a{
+				font-size:13px;
+			}
+			.go_register{
+				color:#cf586e;
+				float:left;
+			}
+			.sea_psw{
+				color:black;
+				float:right;
+			}
+
+		}
+		.gl{border:none;}
+		.register_btn{		
+			// background:#CF596C;
+			background-color: #bfbfbf;
+			text-align:center;
+			border-radius:0.21875rem;
+			border:none;
+			color:#fff;
+			font-size:18px;
+		}
+
+
+	}
+
+}
+
+
+.login_footer{
+	 position: relative;
+	text-align:center;
+	width:100%;
+	margin-top:2.3rem;
+	// margin-left:0;
+	.dd{
+	 background: url(/dist/c8766853396652177dafd3f457e6dda7.png) -2.25rem -7.6875rem;
+    background-size: 1.875rem;
+    display: inline-block;
+    height: 50px;
+    width: 30px;
+    position: absolute;
+    top: -0.59375rem;
+    left: 1.5rem;
+   		 			}	
+	
+	span{
+		color:#999;
+	}
+
+}
+
+.ts{
+	color:#CE586B;
+	font-weight: bold;
+	font-size:10px;
+	
+}

@@ -1,0 +1,131 @@
+/*----------index*/
+body,html{
+	height: 100%;
+}
+
+#app,#reactroot{
+	height: 100%;
+}
+
+.container-ts{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/*----------header*/
+.container-ts>header{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height: 44px;
+	background: #DB5A70;
+	z-index: 1;
+}
+.container-ts>header>ul{
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	line-height: 44px;
+	text-align: center;
+}
+.container-ts>header>ul .listTitle{
+	width:44px;
+	text-align:center;
+}
+.container-ts>header>ul .listCenter{
+	width:230px;
+}
+
+
+
+/*----------content*/
+.container-ts .content-ts{
+	flex:1;
+	display:flex;
+	flex-wrap: wrap;
+	background: #ffe;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+.container-ts .content-ts .listItem-ts{
+	display:flex;
+	width:100%;
+	padding:10px 2%;
+	border-bottom:1px dotted #ccc;
+}
+.container-ts .content-ts .listItem-ts:last-child{
+	margin-bottom:44px;
+}
+.container-ts .content-ts .listItem-ts:last-child{
+	border:0;
+}
+.container-ts .content-ts .listItem-ts .listIcon{
+	flex:1;
+	text-align:center;
+}
+.container-ts .content-ts .listItem-ts .listLink{
+	flex:3;
+}
+.container-ts .content-ts .listItem-ts .listIcon .iconfont{
+	font-size:40px;
+}
+
+
+.container-ts .content-ts .listItem-ts .listLink h3{
+	line-height:2;
+	padding-left:10px;
+}
+.container-ts .content-ts .listItem-ts .listLink h3>a{
+	color:#666;
+}
+.container-ts .content-ts .listItem-ts .listLink span{
+	display:inline-block;
+	padding-top:5px;
+}
+.container-ts .content-ts .listItem-ts .listLink span a{
+	display:inline-block;
+	padding:0 10px;
+	line-height:12px;
+	border-right:1px solid #ccc;
+	color:#999;
+}
+.container-ts .content-ts .listItem-ts .listLink span a .hotMark{
+	display:inline-block;
+	padding:0 5px 0 2px;;
+	background-color:#d95e6c;
+	color:#fff;
+	border-radius:2px;
+	box-sizing:border;
+	margin:0 2px;
+}
+
+.icon-niunai{
+	color:#f99;
+}
+.icon-yinliao{
+	color:#fc0;
+}
+.icon-dangao{
+	color:#f9f;
+}
+.icon-shutiao{
+	color:#ff3;
+}
+.icon-shuiguo{
+	color:#cc0;
+}
+.icon-rou{
+	color:#fc9;
+}
+.icon-FastFood{
+	color:#90f;
+}
+.icon-dou-copy{
+	color:#3df;
+}
+.icon-tangdou{
+	color:#f36;
+}

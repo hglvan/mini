@@ -1,0 +1,21 @@
+.zhifubao{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    header{
+        position: relative;
+        z-index:10;
+       >span{
+           position: absolute;
+           left:5%;
+           top:12%;
+           font-size:24px;
+       }
+        p{
+            font-size: 16px;
+           
+        }
+       
+    }
+}

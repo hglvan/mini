@@ -1,0 +1,49 @@
+
+
+
+footer{
+	width:100%;
+	height:45px;
+	background: #eee;
+	
+}
+footer>ul{
+	height:44px;
+	display: flex;
+	text-align: center;
+	color: #666;
+	border-top:1px solid #ddd;
+}
+
+footer>ul li{
+	height:44px;
+	flex:1;
+	display:flex;
+	flex-direction:column;
+}
+footer>ul li i,
+footer>ul li span{
+	display: block;
+	
+}
+footer>ul li i.iconfont{
+	height:22px;
+}
+footer>ul li span{
+	flex:2;
+}
+footer>ul li i{
+	font-size: 20px;
+	flex:3;
+	line-height: 1.5;
+}
+
+footer>ul li .qty-ts{
+	position:fixed;
+	bottom:35px;
+	right:33%;
+	width:12px;
+	height:12px;
+	border-radius:50%;
+	background-color:#d95e6c;
+}

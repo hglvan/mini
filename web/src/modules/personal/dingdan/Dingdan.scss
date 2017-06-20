@@ -1,0 +1,87 @@
+@import '../../../static/font/iconfont.css';
+
+.dingdan{
+    height: 100%;
+    background-color: #f0f2f5;
+    header{
+        position: relative;
+        z-index:10;
+       >span{
+           position: absolute;
+           left:5%;
+           top:12%;
+           font-size:24px;
+       }
+        p{
+            span{
+                 padding-left: 4px;
+                 
+            }
+            strong{
+                
+                padding-left: 4px;
+                display: none;
+            }
+        }
+       
+    }
+}
+.ddlist{
+    display: none;
+    top:50px;
+    left:0;
+    width:100%;
+    position: absolute;
+    padding-bottom: 2%;
+    padding-top:3%;
+    z-index: 20;
+    background-color: #fff;
+    ul{
+        margin-bottom: 3%;
+        li{
+            display: flex;
+            justify-content: space-around;
+            span{
+                display: inline-block;
+                background: #eff0f4;
+                color:#898989;
+                height:30px;
+                line-height: 30px;
+                text-align: center;
+                padding:0 2%;
+                
+            }
+            span:nth-child(1){
+                width:24%;
+                
+            }
+             span:nth-child(3){
+                width:26%;
+            }
+            span:nth-child(2){
+                width:40%;
+            }
+            span.active{
+                border: 1px solid #dc586b ;
+                background: none ; 
+            }
+        }
+        
+        
+    }
+    ul:nth-child(3){
+        margin-left: 2%;
+        li{
+            justify-content: flex-start;
+        }
+    }
+    ul:nth-child(1){
+        li{
+            span:nth-child(1){
+                //  border: 1px solid #dc586b;
+                // background: none;
+            }
+        }
+    }
+      
+}

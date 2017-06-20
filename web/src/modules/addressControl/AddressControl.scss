@@ -1,0 +1,125 @@
+
+/*----------index*/
+body,html{
+	height: 100%;
+}
+
+#app,#reactroot{
+	height: 100%;
+}
+
+.container-ts{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+/*----------content*/
+.container-ts .content-ts{
+	flex:1;
+	display:flex;
+	flex-wrap: wrap;
+	background: #ffe;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+.container-ts .content-ts .address-parent .addAddress-ts{
+    width: 96%;
+    height:44px;
+    line-height:40px;
+	text-align:center;
+	margin:10px 2%;
+    font-size: 16px;
+    border-radius:3px;
+    background-color:#fee;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.container-ts .content-ts .address-parent .addAddress-ts:active{
+	background-color:#Fdd;
+}
+
+
+.container-ts .content-ts .address-parent{
+	width: 100%;
+}
+
+.container-ts .content-ts .address-parent .address-child{
+	width:100%;
+	padding:10px 2%;
+	border-bottom:1px dotted #ccc;
+	height:122px;
+}
+.container-ts .content-ts .address-parent .address-child .address-info{
+	display: flex;
+	width:100%;
+}
+.container-ts .content-ts .address-parent .address-child .address-info li{
+	width: 100%;
+	padding:0 4%;
+}
+.container-ts .content-ts .address-parent .address-child .address-info li p{
+	height: 32px;
+	line-height: 32px;
+	display: flex;
+}
+.container-ts .content-ts .address-parent .address-child .address-info li .addressItem span{
+	flex:1;
+	color:#999;
+	overflow: hidden;
+	white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.container-ts .content-ts .address-parent .address-child .address-info li p span,
+.container-ts .content-ts .address-parent .address-child .address-info li p label{
+	flex:1;
+	color:#666;
+}
+.container-ts .content-ts .address-parent .address-child .address-info li p label{
+	flex:2;
+}
+
+.container-ts .content-ts .address-parent .address-child .address-operate{
+	display: flex;
+	width: 100%;
+	padding-right: 4%;
+	height: 32px;
+	line-height: 32px;
+}
+.container-ts .content-ts .address-parent .address-child .address-operate span:nth-child(1){
+	width: 12%;
+	font-size:24px;
+	color:#999;
+	text-align: center;
+}
+
+.container-ts .content-ts .address-parent .address-child .address-operate span:nth-child(2){
+	width: 50%;
+}
+
+.container-ts .content-ts .address-parent .address-child .address-operate span:nth-child(3),
+.container-ts .content-ts .address-parent .address-child .address-operate span:nth-child(4){
+	width: 19%;
+	text-align: center;
+	margin-left: 5px;
+}
+.container-ts .content-ts .address-parent .address-child .address-operate span:nth-child(2)>a,
+.container-ts .content-ts .address-parent .address-child .address-operate span:nth-child(3)>a,
+.container-ts .content-ts .address-parent .address-child .address-operate span:nth-child(4)>a{
+	background-color:#fee;
+	border-radius: 3px;
+	line-height: 22px;
+	padding:5px 15px;
+	color:#999;
+}
+
+.container-ts .content-ts .address-parent .address-child .address-operate>span>a:active{
+	background-color:#Fdd;
+}
+
+.container-ts .content-ts .address-parent .address-child .address-operate .icon-gou1.active{
+	/*color:#0a0;*/
+	color:#DB5A70;
+}
+.backActive{
+	background-color:#fee;
+}

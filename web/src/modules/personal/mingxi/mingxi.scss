@@ -1,0 +1,59 @@
+@import "../base.scss";
+@import '../../../static/font/iconfont.css';
+@import '../../../static/my-font/iconfont.css';
+
+.mingxi{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    header{
+        width:100%;
+        position:relative;
+       line-height: 50px;
+       
+        span{
+            position:absolute;
+            left:5%;
+            
+            font-size:24px;
+        }
+        p{
+            line-height: 50px;
+            font-size: 15px;
+        }
+    }
+    .mx_content{
+        flex: 1;
+        background-color: #f0F0F0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        p:first-child{
+            height:80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            span:nth-child(1){
+                display: block;
+                width:150px;
+                height:100px;
+                background: url("../../../static/imgs/ic.png") no-repeat 24px 0;
+                background-size: 100px;
+                
+            }
+            span:last-child{
+                display: block;
+                font-size: 14px;
+                color:#5f636e;
+                line-height: 40px;
+            }
+        }
+        p:last-child{
+            line-height: 30px;
+            color:#999;
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import "../base.scss";
+@import '../../../static/font/iconfont.css';
+@import '../../../static/my-font/iconfont.css';
+body,html{
+    height:100%;
+}
+#reactroot{
+    height:100%;
+}
+.lingpsm{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    header{
+       line-height: 50px;
+       height:50px;
+        span{
+            position:absolute;
+            left:5%;
+            
+            font-size:24px;
+        }
+        p{
+            line-height: 50px;
+            font-size: 15px;
+        }
+    }
+    .fontWrap{
+        
+        
+        overflow-y: auto;
+        overflow-x: hidden;
+        h2{
+            font-size: 14px;
+            color: #d0586b;
+            font-weight: bold;
+            padding: 0 25px;
+            box-sizing: border-box;
+            line-height: 35px;
+            padding-top: 8px;
+        }
+        p{
+            padding: 0 25px;
+            box-sizing: border-box;
+            color: #666666;
+            font-size: 12px;
+            line-height: 24px;
+        }
+    }
+   
+  
+}
