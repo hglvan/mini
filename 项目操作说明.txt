@@ -3,15 +3,15 @@
 mini项目说明
 
 
-1、更改erp.baseUrl公共ip(路径:ReactERP_he\libs\common\global.js)
-   更改react框架的start开启的ip地址(路径:ReactERP_he\web\package.json)
-   更改中间件发送ajax请求的公共接口ip(路径:ReactERP_he\web\src\utils\HttpClient.js)
+1、更改erp.baseUrl公共ip(路径:mini\libs\common\global.js)
+   更改react框架的start开启的ip地址(路径:mini\web\package.json)
+   更改中间件发送ajax请求的公共接口ip(路径:mini\web\src\utils\HttpClient.js)
 
 
-2、后台服务器接口开启,进入根目录下的api文件开启（路径:ReactERP_he\api）==>node server  
+2、后台服务器接口开启,进入根目录下的api文件开启（路径:mini\api）==>node server  
 
 
-3、开启React框架项目服务端口(路径:ReactERP_he\web)==>npm start
+3、开启React框架项目服务端口(路径:mini\web)==>npm start
 
 
 注:根目录下mongo文件下的user.json、goodslist.json分别为后台账户登录用户密码、前端商品数据信息列表，需导入mongo数据库

@@ -51,21 +51,56 @@ class LoginComponent extends React.Component {
                 history.go(-1);
         })
 
-  $('input').focus(function(){
+        $('input').focus(function(){
 
              $('.ts').html('');
 
         })
         
-      
+         var bol =false;
+        $('.save').click(function(){
+            console.log(99)
+            if(!bol){
+                $(this).css('backgroundPosition','-9.6875rem -8.96875rem');
+                bol = true;
+            }else{
+                 $(this).css('backgroundPosition','-9.6875rem -7.6875rem');
+                  bol = false;
+            }
+            
+        })
+
+        var bol1 =false;
+        $('.sea_psw').click(function(e){
+           e.preventDefault();
+            if(!bol1){
+                $('#pwdBox').show();
+                bol1 = true;
+            }else{
+                  $('#pwdBox').hide();
+                  $('.pswout').html('');
+                  $('.czuser').val('');
+                  bol1 = false;
+            }
+            
+        })
+
+
     }
 
-      
+    //找回密码
+    xzpws(){
 
-
-
-
-
+        let obj = {username:this.refs.czuser.value}
+        this.props.logins(obj).then(
+                response => {
+            if(response.body.status){
+                 $('.pswout').html('密码:'+response.body.data[0].password)
+            }else{
+                $('.pswout').html('该用户名不存在')
+            }        
+      })
+    }
 
     constructor(props){
         super(props)
@@ -130,15 +165,11 @@ class LoginComponent extends React.Component {
                         sessionStorage.setItem('usersPhone',this.refs.hg.value);
                         sessionStorage.setItem('password',this.refs.psw.value);
                         sessionStorage.setItem('nickname','cc'+parseInt(Math.random()*1000000000));
-                        window.history.back(-1)   
-                        
-                        
+                        window.history.back(-1);                         
                         
                     }
                 })
-}
-
-
+       }
 
     }
 
@@ -173,7 +204,7 @@ class LoginComponent extends React.Component {
                         <li className="gl">
                           
                             <Link to="/register" className="go_register">立即注册</Link>
-                            <a href="#" className="sea_psw">忘记密码？</a>
+                            <a href="" className="sea_psw">忘记密码？</a>
                         </li>
                     </ul>
                 </div>
@@ -186,9 +217,11 @@ class LoginComponent extends React.Component {
                         <i className="iconfont icon-weibo"></i>
                         <p>微博登录</p>
                         </div>                        
-
                 </div>
-                
+                <div id="pwdBox">
+                    用户名:<input type="text" ref="czuser" className="czuser"/><input type="button" value="确认" className="xzpsw" onClick={this.xzpws.bind(this)}/>
+                    <p className="pswout" ref="pswout"></p>
+                </div>
             </div>
         )
     }

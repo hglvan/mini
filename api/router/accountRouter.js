@@ -41,6 +41,43 @@ exports.Register = function (app) {
         }
     });
     
+    //找回密码
+     app.post('/logins', urlencodedParser, function(request, response){
+        /*
+        * username : ... ,
+        * password : ...
+        * */
+        console.log('做忘记密码测试:',request.body.username)
+        if(!request.body || !request.body.username){
+            
+            response.send(apiResult(false, '用户名不能为空！'));
+            
+        } else {
+            db.selectData('account', {username: request.body.username}, function(result){
+                if(!result.status){
+                    response.send(result);
+                    var data = result.data;
+                    console.log('做忘记密码data测试:',data)
+                } else {
+                    var data = result.data;
+                      console.log('做忘记密码data测试:',data)
+                    if(!data[0]){
+                        
+                        response.send(apiResult(false, '用户名不存在！'));
+                        
+                    } else {
+                        response.send(result);
+                    }
+                }
+            })
+        }
+    });
+    
+
+
+
+
+
     app.post('/register', urlencodedParser, function(request, response){
         /*
         * username : ... ,
