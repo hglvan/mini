@@ -26,4 +26,17 @@ export const REMOVE_REQUEST = 'REMOVE_REQUEST';
 export const REMOVE_SUCCESS = 'REMOVE_SUCCESS';
 export const REMOVE_FAILURE = 'REMOVE_FAILURE';
 
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+
+export const LIST_REQUEST = 'LIST_REQUEST';
+export const LIST_SUCCESS = 'LIST_SUCCESS';
+export const LIST_FAILURE = 'LIST_FAILURE';
+
+export const DETAILS_REQUEST = 'DETAILS_REQUEST';
+export const DETAILS_SUCCESS = 'DETAILS_SUCCESS';
+export const DETAILS_FAILURE = 'DETAILS_FAILURE';
+
+
 export const baseUrl = './src/static/imgs/img/';

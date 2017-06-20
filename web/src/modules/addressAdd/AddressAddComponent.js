@@ -20,25 +20,29 @@ class AddressAddComponent extends Component{
     }
 
     componentDidMount(){
-        let obj = {
-            accountid : window.localStorage.getItem('accountid'),
-            addressid : this.props.location.query.addressid,
-            option : 'address'
-        }
-        //console.log(this.props.location.query)
-        this.props.getAddressMsg(obj)
-        .then(
-            response => {
-                let realName = response.body.data[0].realName;
-                let elephone = response.body.data[0].elephone;
-                let address = response.body.data[0].address;
-                this.setState({
-                    realName,
-                    elephone,
-                    address
-                })
+        if(!this.props.location.query == {}){
+
+            console.log(this.props.location.query);
+        }else{
+            let obj = {
+                accountid : window.localStorage.getItem('accountid'),
+                addressid : this.props.location.query.addressid,
+                option : 'address'
             }
-        )
+            this.props.getAddressMsg(obj)
+            .then(
+                response => {
+                    let realName = response.body.data[0].realName;
+                    let elephone = response.body.data[0].elephone;
+                    let address = response.body.data[0].address;
+                    this.setState({
+                        realName,
+                        elephone,
+                        address
+                    })
+                }
+            )
+        }
     }
     componentDidUpdate(){
         if(this.refs.elephone){
@@ -49,8 +53,8 @@ class AddressAddComponent extends Component{
     }
     writeAddress(){
         let obj = {
-            accountid : this.props.addressData[0].accountid,
-            addressid : this.props.addressData[0].addressid,
+            accountid : window.localStorage.getItem('accountid'),
+            addressid : this.props.location.query.addressid || '',
             realName : this.refs.realName.value,
             elephone : this.refs.elephone.value,
             address : this.refs.address.value

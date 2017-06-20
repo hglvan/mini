@@ -9,3 +9,11 @@ export function sendOrdertMsg(data) {
         query : data
     }
 }
+export function removeCartMsg(data) {
+    return {
+        types : [constants.REMOVE_REQUEST, constants.REMOVE_SUCCESS, constants.REMOVE_FAILURE],
+        path : 'remove',
+        method : 'post',
+        query : data
+    }
+}

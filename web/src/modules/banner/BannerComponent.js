@@ -51,7 +51,7 @@ export default class Bannering extends Component{
     render(){
         return (
         <div className="bannering">
-            <div className="container">
+            <div className="containering">
             <div className="imgnav">
                 <ul className="bigpic .clearfix">
                     <li className="active"><a><img src={banner1} /></a></li>

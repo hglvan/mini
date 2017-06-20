@@ -162,7 +162,7 @@ class CartComponent extends Component{
         this.setState({open: false});
     };
     handleAddress(){
-        this.props.Router.push('address');
+        window.location.hash = '/addressAdd'
     }
     
     moveToOrder(){
@@ -182,7 +182,9 @@ class CartComponent extends Component{
             console.log(window.localStorage.getItem('order'))
         }
     }
-    
+    homeIcon(){
+        window.location.hash = '/index'
+    }
     
     render(){
         const actions = [
@@ -192,7 +194,7 @@ class CartComponent extends Component{
                 onClick={this.handleClose.bind(this)}
             />,
             <FlatButton
-                label="现在登录"
+                label="写入地址"
                 primary={true}
                 keyboardFocused={true}
                 onClick={this.handleAddress.bind(this)}
@@ -204,7 +206,7 @@ class CartComponent extends Component{
                     <div className="box-ti-top">
                         <span className="iconfont icon-fanhui" onClick={this.runBack.bind(this)}></span>
                         <div className="title">购物袋</div>
-                        <span className="iconfont icon-zhuye"></span>
+                        <span className="iconfont icon-zhuye" onClick={this.homeIcon.bind(this)}></span>
                     </div>
                 </div>
                     <div className="cart-main">

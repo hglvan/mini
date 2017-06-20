@@ -17,3 +17,11 @@ export function deleteAddressMsg(data) {
         query : data
     }
 }
+export function setOriginAddressMsg(data) {
+    return {
+        types : [constants.REMOVE_REQUEST, constants.REMOVE_SUCCESS, constants.REMOVE_FAILURE],
+        path : 'accountmsg',
+        method : 'post',
+        query : data
+    }
+}

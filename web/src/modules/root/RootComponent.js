@@ -95,7 +95,7 @@ class RootComponent extends React.Component{
                     <ul>
                         <span  className="iconfont icon-fenlei" onClick={this.enterGoodslist}></span>
                         <span><i className="iconfont icon-dizhi"></i></span>
-                        <span>
+                        <span className="spanThree">
                             <input  id="infomation" type="text" placeholder="搜索商品名称" />
                         </span>
                         <span  className="iconfont icon-sousuo-sousuo"  id="icon-menu"></span>

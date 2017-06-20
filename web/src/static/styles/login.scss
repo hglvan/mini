@@ -1,4 +1,5 @@
 
+
 body,html{
 	height:100%;
 	line-height: 1.6;
@@ -52,12 +53,14 @@ body,html{
 			line-height:1.5625rem;
 			border-bottom:0.03125rem solid #cbcbcb;
 			position:relative;
+			
 			input{
 				border:none;
 				font-size:14px;
 				padding-left:1.09375rem;
 				/*height:39px;*/
 				/*border: 1px solid #000;*/
+				background: transparent;
 			}
 			span{
 				display:inline-block;

@@ -49,7 +49,12 @@ class AddressControlComponent extends Component{
             currentIndex : addressid,
             currentCheck : keyAddress
         })
-        
+
+        this.props.setOriginAddressMsg({
+            accountid : window.localStorage.getItem('accountid'),
+            originAddress : addressid
+        })
+
     }
     addressRemove(addressid){
         let obj = {

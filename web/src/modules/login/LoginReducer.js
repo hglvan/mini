@@ -8,19 +8,16 @@ import * as types from '../../redux/commonConstant'
 export default function(state = {loading: false}, action){
     let reState = JSON.parse(JSON.stringify(state))
     switch(action.type){
-        case types.REQUEST:
+        case types.LOGIN_REQUEST:
             reState.loading = true
-            reState.istrue = false
             break
-        case types.SUCCESS:
-        console.log('记号',action.body)
-            reState.data = action.body.data || []
+        case types.LOGIN_SUCCESS:
+        // console.log('记号',action.body)
+            reState.data = action.body
             reState.lastFetched = action.lastFetched
             reState.loading = false
-            reState.status = action.body.status
-            reState.istrue = true
             break
-        case types.FAILURE:
+        case types.LOGIN_FAILURE:
             reState.error = action.error
             reState.loading = false
             break

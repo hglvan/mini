@@ -1,4 +1,4 @@
-﻿var db = require('../module/dbmodule');
+var db = require('../module/dbmodule');
 var apiResult = require('../module/apiResult.module');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended : false});
@@ -10,7 +10,7 @@ exports.Register = function (app) {
         * username : ... ,
         * password : ...
         * */
-        
+        console.log('做忘记密码测试:',request.body.username)
         if(!request.body || !request.body.username){
             
             response.send(apiResult(false, '用户名不能为空！'));
@@ -23,8 +23,11 @@ exports.Register = function (app) {
             db.selectData('account', {username: request.body.username}, function(result){
                 if(!result.status){
                     response.send(result);
+                    var data = result.data;
+                  
                 } else {
                     var data = result.data;
+                     
                     if(!data[0]){
                         
                         response.send(apiResult(false, '用户名不存在！'));
@@ -41,6 +44,40 @@ exports.Register = function (app) {
         }
     });
     
+      app.post('/logins', urlencodedParser, function(request, response){
+        /*
+        * username : ... ,
+        * password : ...
+        * */
+        console.log('做忘记密码测试:',request.body.username)
+        if(!request.body || !request.body.username){
+            
+            response.send(apiResult(false, '用户名不能为空！'));
+            
+        } else {
+            db.selectData('account', {username: request.body.username}, function(result){
+                if(!result.status){
+                    response.send(result);
+                    var data = result.data;
+                    console.log('做忘记密码data测试:',data)
+                } else {
+                    var data = result.data;
+                      console.log('做忘记密码data测试:',data)
+                    if(!data[0]){
+                        
+                        response.send(apiResult(false, '用户名不存在！'));
+                        
+                    } else {
+                        response.send(result);
+                    }
+                }
+            })
+        }
+    });
+    
+
+
+
     app.post('/register', urlencodedParser, function(request, response){
         /*
         * username : ... ,
@@ -64,7 +101,7 @@ exports.Register = function (app) {
                     
                     if(data[0]){
                         
-                        response.send(apiResult(false, '用户名已被注册'));
+                        response.send(apiResult(false, '用户名已被注册',data));
                         
                     } else {
                         var date = new Date();
@@ -76,7 +113,7 @@ exports.Register = function (app) {
                         
                         db.insertData('account', data, function(insertResult){
                             
-                            response.send(apiResult(true,'注册成功',null));
+                            response.send(insertResult);
                             
                         })
                     }
@@ -114,7 +151,7 @@ exports.Register = function (app) {
                 
                     if(!data[0]){
                     
-                        response.send(apiResult(true, '无此用户！',[]));
+                        response.send(apiResult(false, '无此用户！'));
                     
                     } else {
                         
@@ -127,7 +164,7 @@ exports.Register = function (app) {
                         
                         db.setUpdateData('account', _obj, request.body, function(insertResult){
                             
-                            response.send(apiResult(true,'数据更新成功',null));
+                            response.send(insertResult);
                             
                         })
                     }
@@ -147,7 +184,7 @@ exports.Register = function (app) {
          *   price : ... ,
          *   num : ...
          * */
-        console.log(request.body)
+        
         if(!request.body || !request.body.accountid){
             
             response.send(apiResult(false, '没找到accountid！'));
@@ -168,7 +205,7 @@ exports.Register = function (app) {
                         
                         db.insertData('cart', request.body, function(insertResult){
                             
-                            response.send(apiResult(true,'购物车添加成功',null));
+                            response.send(insertResult);
                         })
                         
                     } else {
@@ -184,7 +221,7 @@ exports.Register = function (app) {
                         
                         db.setUpdateData('cart', _obj, request.body, function(insertResult){
                             
-                            response.send(apiResult(true,'购物车添加成功',null));
+                            response.send(insertResult);
                             
                         })
                     }
@@ -234,7 +271,7 @@ exports.Register = function (app) {
                         
                         db.insertData('address', request.body, function(insertResult){
                         
-                            response.send(apiResult(true,'地址添加成功',null));
+                            response.send(insertResult);
                         })
                     
                     } else {
@@ -246,7 +283,7 @@ exports.Register = function (app) {
                     
                         db.setUpdateData('address', _obj, request.body, function(insertResult){
                         
-                            response.send(apiResult(true,'地址修改成功',null));
+                            response.send(insertResult);
                         
                         })
                     }
@@ -295,18 +332,23 @@ exports.Register = function (app) {
                         
                         request.body.orderid = Date.now() + '';
                         
-                        request.body.address = JSON.parse(request.body.address);
-                        
-                        request.body.goods = JSON.parse(request.body.goods);
-                        
                         db.insertData('order', request.body, function(insertResult){
                             
-                            response.send(apiResult(true,'订单生成成功',request.body.orderid));
+                            response.send(insertResult);
                         })
                         
                     } else {
                         
-                       response.send(apiResult(false,'该订单已经存在，不能修改',null))
+                        //collection.update(_obj,{$set:_options},true,false);
+                        //setUpdateData(_collection,_obj,_options,_callback)
+                        
+                        var _obj = {accountid : request.body.accountid, orderid : request.body.orderid};
+                        
+                        db.setUpdateData('order', _obj, request.body, function(insertResult){
+                            
+                            response.send(insertResult);
+                            
+                        })
                     }
                 }
             })
@@ -333,30 +375,10 @@ exports.Register = function (app) {
             response.send(apiResult(false, '没找到accountid！'));
         
         } else {
-    
-            var _option = request.body.option;
-            delete request.body.option;
             
-            db.selectData(_option, request.body, function(result){
-                
+            db.selectData(request.body.option, {accountid: request.body.accountid}, function(result){
                 console.log('getMsg',result)
-                
-                if(!result.status){
-        
-                    response.send(result);
-        
-                } else {
-                    var data = result.data;
-        
-                    if(!data[0]){
-            
-                        response.send(apiResult(true,'未查找到任何信息',[]))
-            
-                    } else {
-            
-                        response.send(apiResult(true,null,result.data))
-                    }
-                }
+                response.send(result);
             })
         }
     })
@@ -364,7 +386,7 @@ exports.Register = function (app) {
     /************************************** remove ********************************************/
 
     app.post('/remove', urlencodedParser, function(request,response){
-    	
+    
         //传入 id 其他信息
         /*     点击加入购物车
          *   accountid : window.localstorage.getitem('accountid'),
@@ -384,17 +406,10 @@ exports.Register = function (app) {
             
             var _option = request.body.option;
             delete request.body.option;
-            db.removeData(_option, request.body, function(result){
-    
-                if(!result.status){
-        
-                    response.send(result);
-        
-                } else {
-                    
-                    response.send(apiResult(true,'数据删除成功'))
-            
-                }
+            db.selectData(_option, request.body, function(result){
+                
+                console.log('getMsg',result)
+                response.send(result);
             })
         }
     })

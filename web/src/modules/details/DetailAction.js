@@ -3,7 +3,7 @@ import * as constants from '../../redux/commonConstant'
 export function getProduct(data) {
     
     return {
-        types : [constants.DETAIL_REQUEST, constants.DETAIL_SUCCESS, constants.DETAIL_FAILURE],
+        types : [constants.DETAILS_REQUEST, constants.DETAILS_SUCCESS, constants.DETAILS_FAILURE],
         path : 'getProducts',
         method : 'post',
         query : data,

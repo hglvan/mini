@@ -17,7 +17,7 @@ import Searchresult from '../modules/searchresult/SearchresultReducer'
 import footer from '../modules/footer/FooterReducer'
 import addressCheck from '../modules/addressCheck/AddressCheckReducer'
 import addressControl from '../modules/addressControl/AddressControlReducer'
-
+import addressAdd from '../modules/addressAdd/AddressAddReducer.js'
 
 
 //这里是合并reducer的，写完记得合并上去
@@ -37,7 +37,8 @@ const rootReducer = combineReducers({
      Searchresult,
     footer,
     addressCheck,
-    addressControl
+    addressControl,
+    addressAdd
 })
 
 export default rootReducer

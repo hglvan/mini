@@ -22,7 +22,8 @@ class DetailComponent extends Component{
     }
     
     componentDidMount(){
-        this.props.getProduct({goodsid:'1497331479118'});
+        console.log(this.props.location.query)
+        this.props.getProduct(this.props.location.query);
     }
     
     runBack() {
@@ -35,7 +36,8 @@ class DetailComponent extends Component{
         this.setState({open: false});
     };
     handleLogin(){
-        this.props.Router.push('login');
+        window.localStorage.setItem('Realgoodsid',this.props.detailData[0].goodsid)
+        window.location.hash = '/login';
     }
     
     cutNum() {
@@ -78,6 +80,9 @@ class DetailComponent extends Component{
         }
         
     }
+    homeBack(){
+        window.location.hash = '/index'
+    }
     render(){
         const actions = [
             <FlatButton
@@ -98,7 +103,7 @@ class DetailComponent extends Component{
                     <div className="box-ti-top">
                         <span className="iconfont icon-fanhui" onClick={this.runBack}></span>
                         <div className="title">{this.props.detailData && this.props.detailData[0].goodstittle}</div>
-                        <span className="iconfont icon-zhuye"></span>
+                        <span className="iconfont icon-zhuye" onClick={this.homeBack.bind(this)}></span>
                     </div>
                 </div>
                 

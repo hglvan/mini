@@ -16,6 +16,19 @@ export default function (state = {loading : false}, action) {
             reSate.error = action.error;
             reSate.loading = true;
             break;
+
+        case types.REMOVE_REQUEST:
+            reSate.loading = true;
+            break;
+        case types.REMOVE_SUCCESS:
+            reSate.orderData = action.body.data;
+            reSate.lastFetched = action.lastFetched;
+            reSate.loading = false;
+            break;
+        case types.REMOVE_FAILURE:
+            reSate.error = action.error;
+            reSate.loading = true;
+            break;
     }
     return reSate;
 }

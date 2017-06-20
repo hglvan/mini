@@ -25,7 +25,7 @@ class OrderComponent extends Component{
         super(props);
         this.state = {
             open: false,
-            currentCheck : '',
+            currentCheck : 'thr',
             istrue : {fir:false,sec:false,thr:true},
             choice : 1,
             goods : [],
@@ -81,21 +81,34 @@ class OrderComponent extends Component{
         this.props.sendOrdertMsg(obj)
         .then(
             response => {
+
                 this.setState({open: true});
                 window.localStorage.setItem('orderid',response.body.data);
+
+                let obj = {
+                    accountid : window.localStorage.getItem('accountid'),
+                    option : 'cart'
+                }
+
+                this.props.removeCartMsg(obj)
             }
         )
-        
+        .then(
+            response => {
+
+                console.log(response)
+            }
+        )
     };
     
     handleClose(){
         this.setState({open: false});
     };
     handleMain(){
-        /*this.props.router.push('index')*/
+        this.setState({open:false})
     }
     handleDetail(){
-        this.props.router.push('detail')
+        this.props.router.push('personal/DingdComponent')
     }
     CheckChange(str){
         let istrue = this.state.istrue;
@@ -120,15 +133,19 @@ class OrderComponent extends Component{
                 this.props.router.push('index');
                 break;
             case 2:
-                this.props.router.push('list');
+                this.props.router.push('goodslist');
                 break;
             case 3:
-                this.props.router.push('index');
+                this.props.router.push('cart');
                 break;
             case 4:
-                this.props.router.push('geren');
+                this.props.router.push('personal');
                 break;
         }
+    }
+
+    backIcon(){
+        window.history.back(-1)
     }
     render(){
         
@@ -150,7 +167,7 @@ class OrderComponent extends Component{
             <div className="container">
                 <div className="order-head">
                     <div className="head-title">
-                        <div className="back-work">
+                        <div className="back-work" onClick={this.backIcon.bind(this)}>
                             <IconButton >
                                 <i className="iconfont icon-fanhui"></i>
                             </IconButton>
