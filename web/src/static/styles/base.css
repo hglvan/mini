@@ -15,8 +15,8 @@ header,footer,section,nav{
 	display:block;}
 
 body{
-	/*font-size:12px;*/
-	font-family:"微软雅黑";
+	font-size:12px;
+	font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
 	color:#3e3e3e;}
 a{
 	text-decoration:none;
